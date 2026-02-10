@@ -1,11 +1,11 @@
 # Bookworm
 🐛 Bookworm is new experimental typechecker for `Watt`.
 
-# Proposal
+## Proposal
 Bookworm needs to be as simple as possible solution for `Watt`
 typechecking, but powerful too.
 
-# Design
+## Design
 Here's an explanation of the bookworm design.
 
 Bookworm analysis separates to three stages:
