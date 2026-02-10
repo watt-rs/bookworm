@@ -5,6 +5,10 @@
 Bookworm needs to be as simple as possible solution for `Watt`
 typechecking, but powerful too.
 
+## Pipeline
+Pipeline of the bookworm can be represented like this:
+`Hir` -> `Bookworm` -> `TyCx` + `Thir`
+
 ## Design
 Here's an explanation of the bookworm design.
 
