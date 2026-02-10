@@ -29,3 +29,6 @@ Ribs stack is stack of the scopes (`Rib`). `Rib` contains rigid generic variable
 
 Fields of structures also got represented with `Field`.
 `Field` type contains fields: `ty`, `mutability`
+
+## Code quality
+Bookworm will use `Code Rabbit` (`https://www.coderabbit.ai/`) for code quality control.
