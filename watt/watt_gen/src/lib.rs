@@ -8,7 +8,7 @@ use watt_ast::ast::{
 };
 
 /// Replaces js identifiers equal
-/// to some js keywords with `{indentifier}$`
+/// to some js keywords with `{identifier}$`
 pub fn try_escape_js(identifier: &str) -> String {
     if matches!(
         identifier,
