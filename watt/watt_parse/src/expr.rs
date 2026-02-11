@@ -194,7 +194,6 @@ impl<'file> Parser<'file> {
             }
         }
     }
-    }
 
     /// Primary expr parsing
     fn primary_expr(&mut self) -> Expression {
