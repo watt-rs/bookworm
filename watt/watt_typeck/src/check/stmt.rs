@@ -95,7 +95,7 @@ impl<'pkg, 'cx> ModuleCx<'pkg, 'cx> {
                             span: location.span.into()
                         }],
                         expected: typ.pretty(&mut self.icx),
-                        got: inferred_from.pretty(&mut self.icx)
+                        got: inferred_to.pretty(&mut self.icx)
                     })
                 }
             }
