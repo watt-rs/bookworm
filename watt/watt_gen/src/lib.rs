@@ -324,7 +324,7 @@ pub fn gen_statement(stmt: Statement) -> js::Tokens {
         Statement::For {
             name, range, body, ..
         } => quote! {
-            for (const $(name.as_str()) of $(gen_range(*range))) {
+            for (const $(try_escape_js(&name)) of $(gen_range(*range))) {
                 $(match body {
                     Either::Left(block) => $(gen_block(block)),
                     Either::Right(expr) => $(gen_expression(expr));
