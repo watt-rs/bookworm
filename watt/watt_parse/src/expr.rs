@@ -31,11 +31,10 @@ impl<'file> Parser<'file> {
             None
         };
 
-        // end span `fn (): ... {}`
-        let end_location = self.previous().address.clone();
-
         // body
         let body = self.block_or_box_expr();
+        // end span `fn (): ... {}`
+        let end_location = self.previous().address.clone();
 
         Expression::Function {
             location: start_location + end_location,
