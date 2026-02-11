@@ -161,14 +161,13 @@ impl<'file> Parser<'file> {
         if self.check(TokenKind::As) {
             self.advance();
             let text = self.consume(TokenKind::Text).value.clone();
-            let span_end = self.peek().address.clone();
+            let span_end = self.previous().address.clone();
             Expression::Todo {
                 location: span_start + span_end,
                 text: Some(text),
             }
         } else {
-            self.advance();
-            let span_end = self.peek().address.clone();
+            let span_end = self.previous().address.clone();
             Expression::Todo {
                 location: span_start + span_end,
                 text: None,
@@ -183,19 +182,19 @@ impl<'file> Parser<'file> {
         if self.check(TokenKind::As) {
             self.advance();
             let text = self.consume(TokenKind::Text).value.clone();
-            let span_end = self.peek().address.clone();
+            let span_end = self.previous().address.clone();
             Expression::Panic {
                 location: span_start + span_end,
                 text: Some(text),
             }
         } else {
-            self.advance();
-            let span_end = self.peek().address.clone();
+            let span_end = self.previous().address.clone();
             Expression::Panic {
                 location: span_start + span_end,
                 text: None,
             }
         }
+    }
     }
 
     /// Primary expr parsing
