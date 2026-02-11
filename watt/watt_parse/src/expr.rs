@@ -520,14 +520,14 @@ impl<'file> Parser<'file> {
                             (tk.address.clone(), tk.value.clone())
                         });
                         // End span
-                        let end_location = self.peek().address.clone();
+                        let end_location = self.previous().address.clone();
                         // As result, enum unwrap pattern
                         Pattern::Unwrap { address: start_location + end_location, en: value, fields }
                     }
                     // if no unwrap, returning just as value
                     else {
                         // End span
-                        let end_location = self.peek().address.clone();
+                        let end_location = self.previous().address.clone();
                         // As result, enum variant pattern
                         Pattern::Variant(start_location + end_location, value)
                     }
