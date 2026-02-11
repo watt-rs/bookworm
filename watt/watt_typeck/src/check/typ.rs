@@ -72,7 +72,9 @@ impl<'pkg, 'cx> ModuleCx<'pkg, 'cx> {
 
             // User-defined types
             _ => match self.icx.generics.get(&name) {
-                Some(id) => Typ::Generic(id),
+                Some(id) => {
+                    self.ensure_no_generics(&location, generics.len(), || Typ::Generic(id))
+                }
                 None => match self.resolver.resolve_type(&location, &name) {
                     TypeDef::Enum(en) => self.instantiate_enum_type(&location, en, generics),
                     TypeDef::Struct(st) => self.instantiate_struct_type(&location, st, generics),
