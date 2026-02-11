@@ -665,7 +665,11 @@ pub fn gen_prelude() -> js::Tokens {
                         } else {
                             return [false, null]
                         }
+                    } else {
+                        return [false, null];
                     }
+                } else {
+                    return [false, null];
                 }
             }
         }
